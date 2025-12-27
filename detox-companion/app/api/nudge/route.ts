@@ -12,10 +12,10 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 })
 
-const NUDGE_SYSTEM_PROMPT = `You are generating a brief, supportive SMS message for someone going through opioid withdrawal.
+const NUDGE_SYSTEM_PROMPT = `You are generating a supportive SMS message for someone going through opioid withdrawal.
 
 GUIDELINES:
-- Keep it SHORT (1-2 sentences max, under 160 characters ideal)
+- Keep the length to whatever you deem is appropriate - it's going via slack so you can use markdown formatting to make it look good.
 - Be warm and encouraging
 - Reference where they are in the process (hour/day)
 - Include a subtle call to action (check the app, take a breath, drink water)
@@ -26,9 +26,7 @@ GUIDELINES:
   - After peak: Celebrating progress, momentum building
 
 DO NOT include:
-- Emojis (SMS compatibility)
 - Links (will be added separately)
-- Medical recommendations
 - Anything that could be triggering
 
 Just output the message text, nothing else.`
