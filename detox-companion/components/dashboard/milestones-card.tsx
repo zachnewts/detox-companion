@@ -14,12 +14,12 @@ export function MilestonesCard({ milestones, achieved, session }: MilestonesCard
   const hoursElapsed = Math.floor((Date.now() - startTime) / (1000 * 60 * 60))
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Milestones</CardTitle>
+    <Card className="w-full">
+      <CardHeader className="pb-3 md:pb-6">
+        <CardTitle className="text-lg md:text-xl">Milestones</CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-3">
+        <ul className="space-y-2 md:space-y-3">
           {milestones.map((milestone) => {
             const isAchieved = achievedIds.has(milestone.id) || hoursElapsed >= milestone.hour_threshold
             const milestoneIndex = milestones.findIndex(m => m.id === milestone.id)
@@ -31,16 +31,16 @@ export function MilestonesCard({ milestones, achieved, session }: MilestonesCard
               <li
                 key={milestone.id}
                 className={cn(
-                  'flex items-center gap-3 p-3 rounded-lg transition-colors',
+                  'flex items-center gap-3 p-3 md:p-3 rounded-lg transition-colors min-h-[60px]',
                   isAchieved && 'bg-green-50 text-green-900',
                   isCurrent && 'bg-indigo-50 text-indigo-900 ring-2 ring-indigo-200',
                   !isAchieved && !isCurrent && 'text-slate-400'
                 )}
               >
-                <span className="text-xl">{isAchieved ? '✅' : milestone.icon}</span>
-                <div>
-                  <div className="font-medium">{milestone.name}</div>
-                  <div className="text-sm opacity-70">{milestone.description}</div>
+                <span className="text-2xl md:text-xl shrink-0">{isAchieved ? '✅' : milestone.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="font-medium text-base md:text-base">{milestone.name}</div>
+                  <div className="text-sm md:text-sm opacity-70">{milestone.description}</div>
                 </div>
               </li>
             )

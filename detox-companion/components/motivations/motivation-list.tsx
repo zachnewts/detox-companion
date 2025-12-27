@@ -36,22 +36,22 @@ export function MotivationList({ motivations }: MotivationListProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 md:space-y-4">
       {motivations.map((motivation) => (
         <Card key={motivation.id}>
-          <CardContent className="py-4">
-            <div className="flex items-start justify-between gap-4">
-              <p className="text-slate-900 italic">"{motivation.content}"</p>
+          <CardContent className="py-4 md:py-5">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4">
+              <p className="text-slate-900 italic text-base md:text-base flex-1">"{motivation.content}"</p>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => handleDelete(motivation.id)}
-                className="text-slate-400 hover:text-red-500 shrink-0"
+                className="text-slate-400 hover:text-red-500 shrink-0 min-h-[44px] min-w-[80px] self-end md:self-auto"
               >
                 Delete
               </Button>
             </div>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-xs md:text-xs text-slate-400 mt-2 md:mt-3">
               Added {new Date(motivation.created_at).toLocaleDateString()}
             </p>
           </CardContent>

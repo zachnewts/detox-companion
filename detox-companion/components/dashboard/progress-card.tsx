@@ -24,32 +24,32 @@ export function ProgressCard({ session, milestones }: ProgressCardProps) {
   }, [session, milestones])
 
   return (
-    <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
-      <CardHeader>
-        <CardTitle className="text-white/90">Your Progress</CardTitle>
+    <Card className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white w-full">
+      <CardHeader className="pb-3 md:pb-6">
+        <CardTitle className="text-white/90 text-lg md:text-xl">Your Progress</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-0">
         <div className="text-center">
-          <div className="text-6xl font-bold mb-2">
+          <div className="text-5xl md:text-6xl font-bold mb-2">
             Hour {progress.currentHour}
           </div>
-          <div className="text-xl text-white/80 mb-4">
+          <div className="text-lg md:text-xl text-white/80 mb-3 md:mb-4">
             Day {progress.currentDay}
           </div>
-          <div className="text-sm text-white/70 mb-6">
+          <div className="text-base md:text-sm text-white/70 mb-4 md:mb-6">
             {timeString} clean
           </div>
           
           {progress.nextMilestone && (
-            <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-sm text-white/70 mb-2">Next milestone</div>
-              <div className="flex items-center justify-center gap-2 text-lg font-medium">
-                <span>{progress.nextMilestone.icon}</span>
+            <div className="bg-white/10 rounded-lg p-3 md:p-4">
+              <div className="text-sm md:text-base text-white/70 mb-2">Next milestone</div>
+              <div className="flex items-center justify-center gap-2 text-base md:text-lg font-medium">
+                <span className="text-xl md:text-2xl">{progress.nextMilestone.icon}</span>
                 <span>{progress.nextMilestone.name}</span>
               </div>
-              <div className="w-full bg-white/20 rounded-full h-2 mt-3">
+              <div className="w-full bg-white/20 rounded-full h-2 md:h-2.5 mt-3">
                 <div
-                  className="bg-white rounded-full h-2 transition-all duration-500"
+                  className="bg-white rounded-full h-2 md:h-2.5 transition-all duration-500"
                   style={{ width: `${progress.percentToNext}%` }}
                 />
               </div>

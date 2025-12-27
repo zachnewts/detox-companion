@@ -19,13 +19,21 @@ export function Header({ user }: HeaderProps) {
   }
 
   return (
-    <header className="bg-white border-b border-slate-200 px-6 py-4">
+    <header className="bg-white border-b border-slate-200 px-4 md:px-6 py-3 md:py-4 shrink-0">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-slate-900">Detox Companion</h1>
-        <div className="flex items-center gap-4">
-          <span className="text-sm text-slate-600">{user.email}</span>
-          <Button variant="outline" size="sm" onClick={handleLogout}>
-            Sign Out
+        <h1 className="text-lg md:text-xl font-bold text-slate-900">Detox Companion</h1>
+        <div className="flex items-center gap-2 md:gap-4">
+          <span className="hidden md:inline text-sm text-slate-600 text-right max-w-[200px] truncate">
+            {user.email}
+          </span>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={handleLogout}
+            className="min-h-[44px] px-3 md:px-4 text-sm md:text-base"
+          >
+            <span className="hidden md:inline">Sign Out</span>
+            <span className="md:hidden">Out</span>
           </Button>
         </div>
       </div>

@@ -39,8 +39,8 @@ export function MotivationForm({ userId }: MotivationFormProps) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Add a New Motivation</CardTitle>
+      <CardHeader className="pb-3 md:pb-6">
+        <CardTitle className="text-lg md:text-xl">Add a New Motivation</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -48,9 +48,13 @@ export function MotivationForm({ userId }: MotivationFormProps) {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Why are you doing this? What do you want your life to look like? Who are you doing this for?"
-            className="min-h-[100px]"
+            className="min-h-[100px] md:min-h-[120px] text-base"
           />
-          <Button type="submit" disabled={!content.trim() || loading}>
+          <Button 
+            type="submit" 
+            disabled={!content.trim() || loading}
+            className="w-full md:w-auto min-h-[44px] px-6 text-base"
+          >
             {loading ? 'Saving...' : 'Add Motivation'}
           </Button>
         </form>

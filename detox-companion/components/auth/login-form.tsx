@@ -34,9 +34,9 @@ export function LoginForm() {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Sign In</CardTitle>
-        <CardDescription>
+      <CardHeader className="pb-3 md:pb-6">
+        <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
+        <CardDescription className="text-base md:text-sm">
           Enter your email to receive a magic link
         </CardDescription>
       </CardHeader>
@@ -48,12 +48,13 @@ export function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="text-base min-h-[44px]"
           />
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full min-h-[44px] text-base" disabled={loading}>
             {loading ? 'Sending...' : 'Send Magic Link'}
           </Button>
           {message && (
-            <p className="text-sm text-center text-slate-600">{message}</p>
+            <p className="text-sm md:text-sm text-center text-slate-600">{message}</p>
           )}
         </form>
       </CardContent>

@@ -36,10 +36,10 @@ export function StartDetoxButton({ userId }: StartDetoxButtonProps) {
   }
 
   return (
-    <Card className="max-w-lg mx-auto">
-      <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Ready to Begin?</CardTitle>
-        <CardDescription>
+    <Card className="max-w-lg mx-auto w-full">
+      <CardHeader className="text-center pb-3 md:pb-6">
+        <CardTitle className="text-xl md:text-2xl">Ready to Begin?</CardTitle>
+        <CardDescription className="text-base md:text-sm">
           Starting your detox journey takes courage. We'll be here with you every step of the way.
         </CardDescription>
       </CardHeader>
@@ -48,11 +48,11 @@ export function StartDetoxButton({ userId }: StartDetoxButtonProps) {
           size="lg"
           onClick={handleStart}
           disabled={loading}
-          className="px-8"
+          className="px-8 min-h-[44px] w-full md:w-auto text-base"
         >
           {loading ? 'Starting...' : 'Start My Detox'}
         </Button>
-        <p className="text-sm text-slate-500 mt-4">
+        <p className="text-sm md:text-sm text-slate-500 mt-4">
           This will start tracking your progress from this moment.
         </p>
       </CardContent>

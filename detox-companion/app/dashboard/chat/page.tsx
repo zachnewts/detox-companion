@@ -30,7 +30,7 @@ export default async function ChatPage() {
     .order('created_at', { ascending: true })
 
   return (
-    <div className="h-[calc(100vh-140px)]">
+    <div className="h-[calc(100dvh-73px-64px)] md:h-[calc(100vh-140px)] w-full max-w-full overflow-hidden">
       <ChatInterface
         sessionId={session.id}
         initialMessages={messages || []}

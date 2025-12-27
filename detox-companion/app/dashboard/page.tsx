@@ -37,13 +37,13 @@ export default async function DashboardPage() {
     : { data: [] }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6 max-w-full overflow-x-hidden">
       {!session ? (
         <StartDetoxButton userId={user!.id} />
       ) : (
         <>
           <ProgressCard session={session} milestones={milestones || []} />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-6">
             <MilestonesCard
               milestones={milestones || []}
               achieved={achievedMilestones || []}

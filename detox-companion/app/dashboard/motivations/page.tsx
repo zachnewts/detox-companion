@@ -13,10 +13,10 @@ export default async function MotivationsPage() {
     .order('created_at', { ascending: false })
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
+    <div className="max-w-2xl mx-auto space-y-4 md:space-y-6 w-full px-2 md:px-0">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Your Why</h1>
-        <p className="text-slate-600 mt-1">
+        <h1 className="text-xl md:text-2xl font-bold text-slate-900">Your Why</h1>
+        <p className="text-base md:text-sm text-slate-600 mt-1">
           Remind yourself why you're doing this. These will be shown on your dashboard
           and referenced by your companion during tough moments.
         </p>
