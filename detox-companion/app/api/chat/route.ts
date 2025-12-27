@@ -102,7 +102,7 @@ ${motivations?.map(m => `- "${m.content}"`).join('\n') || 'No motivations record
 
     // Call Claude API - using current model name
     const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'claude-sonnet-4-20250514',
       max_tokens: 1024,
       system: SYSTEM_PROMPT + '\n\n' + contextInfo,
       messages,
